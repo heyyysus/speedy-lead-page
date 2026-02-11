@@ -25,7 +25,7 @@ export interface FormInputProps {
 export const FormInput = ({ label, type, pattern, placeholder, onChange, onBlur, value, required }: FormInputProps) => {
   return (
     <div className="flex w-full items-center text-black flex-col mb-[15px]">
-        <div className="w-1/2 flex flex-col">
+        <div className="w-4/5 md:w-1/2 flex flex-col">
           <label htmlFor="fname" className="mb-[5px] font-medium text-lg">{label} {required && 
             <span className="text-sm text-red-500">*</span>}</label>
           <input
@@ -48,7 +48,7 @@ export const FormInput = ({ label, type, pattern, placeholder, onChange, onBlur,
 export const FormZipInput = ({ label, onChange, value, required }: FormInputProps) => {
   return (
     <div className="flex w-full items-center text-black flex-col mb-[15px]">
-        <div className="w-1/2 flex flex-col">
+        <div className="w-4/5 md:w-1/2 flex flex-col">
           <label htmlFor="fname" className="mb-[5px] font-medium text-lg">{label} 
             {required && 
             <span className="text-md text-red-500">*</span>}
@@ -146,7 +146,7 @@ export default function AutoSlide1({ handleSubmit }: QuoteBoxProps) {
         required
       />
 
-      <div className="flex place-content-center w-1/2 mx-auto cursor-pointer mt-[40px]" onClick={() => setOptedIn(!optedIn)}>
+      <div className="flex place-content-center w-4/5 md:w-1/2 mx-auto cursor-pointer mt-[40px]" onClick={() => setOptedIn(!optedIn)}>
         <input type="checkbox" className="size-[50px] mr-[15px] cursor-pointer" checked={optedIn} onChange={() => {}} />
         <label className="cursor-pointer select-none" >
           I agree to receive text messages from an insurance agent at this number. Msg & data rates may apply. Reply STOP to opt out.

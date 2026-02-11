@@ -22,7 +22,7 @@ const arrayRange = (start: number, stop: number, step = 1) =>
 export const FormDropdownMenu = ({ label, values, onChange }: FormDropdownMenuProps) => {
     return(
     <div className="flex w-full items-center text-black flex-col mb-[15px] ">
-        <div className="w-1/2 flex flex-col">
+        <div className="w-4/5 md:w-1/2 flex flex-col">
           <label htmlFor="fname" className="mb-[5px] font-medium text-lg">{label}: </label>
             <select name="year" id="year" className="text-lg p-[15px] outline-1 focus:outline-3 outline-black rounded-md focus:outline-indigo-950" 
                 onChange={(e) => {onChange && onChange(e.target.value)}}>

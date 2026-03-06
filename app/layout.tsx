@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Cheap Auto Insurance",
-  description: "Looking for cheap auto insurance in California? Get a quick quote online and see how much you can save.",
+  title: "Compare and Save on Auto Insurance",
+  description: "Looking for affordable auto insurance in California? Get a quick quote online and see how much you can save.",
 };
 
 export default function RootLayout({

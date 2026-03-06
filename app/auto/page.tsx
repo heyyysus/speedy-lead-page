@@ -2,6 +2,45 @@
 import { useState } from "react";
 import AutoSlide1 from "./AutoSlide1";
 import AutoSlide2 from "./AutoSlide2";
+import Image from "next/image";
+import Reviews from "../../data/reviews.json"
+
+export const Star = () => {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+        </svg>
+    );
+}
+
+export interface ReviewBoxProps {
+    title: string,
+    content: string,
+    name: string
+};
+
+export const ReviewBox = ({ title, content, name }: ReviewBoxProps) => {
+    return(
+        <div className="mx-10 min-w-[400px] rounded-md border-black border-solid border-2 p-4 flex flex-col align-center">
+            <div className="flex flex-row items-center justify-between">
+                <div className="flex flex-row text-yellow-500">
+                <Star />
+                <Star />
+                <Star />
+                <Star />
+                <Star />
+            </div>
+            <Image  src="/google_icon.png" alt="Google Review" width={50} height={50} />
+            </div>
+            
+            <h1 className="text-xl font-bold my-2">{title}</h1>
+            <p className="text-slate-500 w-[400px]">{content}</p>
+            <div className="flex flex-row items-center text-md font-semibold mt-2">
+                - {name}
+            </div>
+        </div>
+    );
+}
 
 export const FinalSlide = () => {
     return(
@@ -58,9 +97,10 @@ export default function AutoQuotePage(){
 
     const slides = [<AutoSlide1 handleSubmit={(fname, lname, zip, dob, phone, optedIn) => {
         setSubmission({
-            fname,lname,zip,dob,phone, optedIn
+            fname, lname, zip, dob, phone, optedIn
         });
-        changeStep(1);
+        PostSubmission({fname, lname, zip, dob, phone, optedIn});
+        changeStep(2);
     }}/>, <AutoSlide2 handleSubmit={(year: string, make: string, model: string) => {
         setSubmission({...submission, year, make, model});
         // console.log(submission);
@@ -68,8 +108,16 @@ export default function AutoQuotePage(){
         changeStep(2);
     }}/>, <FinalSlide />]
     return (
-        <div>
-            {slides[step]}
+        <div className="flex flex-col justify-center">
+            <div className="min-h-screen w-screen pb-5">{slides[step]}</div>
+            <div className="h-[600px] w-screen bg-white flex items-center justify-center">
+                {Reviews.reviews.map((r, i) => <ReviewBox key={i} title={r.title} content={r.content} name={r.name} />)}
+            </div>
         </div>
     );
 }
+
+
+<div className="h-screen w-screen bg-white">
+    <div></div>
+</div>

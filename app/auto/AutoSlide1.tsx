@@ -85,7 +85,7 @@ export default function AutoSlide1({ handleSubmit }: QuoteBoxProps) {
     if (fname.length < 1) {setstatus("Please Enter First Name"); return false;}
     if (lname.length < 1) {setstatus("Please Enter Last Name"); return false;}
     if (zip.length < 5) {setstatus("Please Enter Zip Code"); return false;}
-    if (isNaN((new Date(dob)).getTime())) {setstatus("Please Enter a Valid Date of Birth"); return false;}
+    // if (isNaN((new Date(dob)).getTime())) {setstatus("Please Enter a Valid Date of Birth"); return false;}
     if (phone.length < 14) {setstatus("Please Enter a Valid Phone Number"); return false;}
     return true;
   }
@@ -135,13 +135,12 @@ export default function AutoSlide1({ handleSubmit }: QuoteBoxProps) {
       <FormInput label="First Name" value={fname} onChange={setfname} required />
       <FormInput label="Last Name" value={lname} onChange={setlname} required />
       <FormZipInput label="Zip Code" value={zip} onChange={handleZipChange} required />
-      <FormInput label="Date of Birth" type="date" value={dob} onChange={(v) => {console.log(v);setdob(v)}} required />
+      {/* <FormInput label="Date of Birth" type="date" value={dob} onChange={(v) => {console.log(v);setdob(v)}} required /> */}
       <FormInput 
         label="Phone Number" 
         type="tel" 
         value={phone} 
         onChange={handlePhoneChange} 
-        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
         placeholder="(999) 999-9999"
         required
       />
@@ -161,7 +160,7 @@ export default function AutoSlide1({ handleSubmit }: QuoteBoxProps) {
           fname, lname, zip, dob, phone, optedIn
         )}}}
       >
-        Next
+        See My Rate
       </button>
       </form>
     </div>

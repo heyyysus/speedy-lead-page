@@ -115,11 +115,11 @@ export default function AutoSlide1({ handleSubmit }: QuoteBoxProps) {
         <h1 className="text-4xl font-bold text-slate-800">
           SAVE up to <span className="text-red-500">35%</span>
         </h1>
-        <p className="mt-3 text-lg text-slate-700">
+        <p className="mt-2 text-xl text-slate-700">
           Get Your Quote Online
         </p>
-        <p className="text-sm text-slate-500 mt-1">
-          or by calling <a href="tel:+18665773339" className="font-semibold">866-577-3339</a>
+        <p className="text-xl text-slate-500 mt-2">
+          or by calling <a href="tel:+19516951500" className="font-semibold">(951) 695-1500</a>
         </p>
       </div>
 

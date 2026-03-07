@@ -16,12 +16,14 @@ export const Star = () => {
 export interface ReviewBoxProps {
     title: string,
     content: string,
-    name: string
+    name: string,
+    href: string,
 };
 
-export const ReviewBox = ({ title, content, name }: ReviewBoxProps) => {
+export const ReviewBox = ({ title, content, name, href }: ReviewBoxProps) => {
     return(
-        <div className="mx-10 min-w-[400px] rounded-md border-black border-solid border-2 p-4 flex flex-col align-center">
+        <div className="mx-10 my-5 min-w-[200px] md:min-w-[400px] rounded-md border-black border-solid border p-4 flex flex-col align-center">
+            <a href={href} target="_blank">
             <div className="flex flex-row items-center justify-between">
                 <div className="flex flex-row text-yellow-500">
                 <Star />
@@ -33,11 +35,12 @@ export const ReviewBox = ({ title, content, name }: ReviewBoxProps) => {
             <Image  src="/google_icon.png" alt="Google Review" width={50} height={50} />
             </div>
             
-            <h1 className="text-xl font-bold my-2">{title}</h1>
-            <p className="text-slate-500 w-[400px]">{content}</p>
-            <div className="flex flex-row items-center text-md font-semibold mt-2">
+            <h1 className="text-lg md:text-xl font-bold my-2">{title}</h1>
+            <p className="text-slate-500 w-5/6 md:w-[400px] text-sm md:text-base">{content}</p>
+            <p className="flex flex-row items-center text-base font-semibold mt-2">
                 - {name}
-            </div>
+            </p>
+            </a>
         </div>
     );
 }
@@ -109,9 +112,9 @@ export default function AutoQuotePage(){
     }}/>, <FinalSlide />]
     return (
         <div className="flex flex-col justify-center">
-            <div className="min-h-screen w-screen pb-5">{slides[step]}</div>
-            <div className="h-[600px] w-screen bg-white flex items-center justify-center">
-                {Reviews.reviews.map((r, i) => <ReviewBox key={i} title={r.title} content={r.content} name={r.name} />)}
+            <div className="min-h-screen w-screen py-5">{slides[step]}</div>
+            <div className="md:h-[600px] py-5 w-screen bg-white flex flex-col md:flex-row items-center justify-center">
+                {Reviews.reviews.map((r, i) => <ReviewBox key={i} title={r.title} content={r.content} name={r.name} href={r.href} />)}
             </div>
         </div>
     );

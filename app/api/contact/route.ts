@@ -1,11 +1,19 @@
 import { Resend } from 'resend';
 import { Submission } from '@/app/auto/page';
+import type { NextRequest } from 'next/server';
+import { headers } from 'next/headers';
+
+
 
 const resend = new Resend(process.env.RESEND_KEY);
 
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
   const { submission }: {submission: Submission} = await req.json();
+
+  const headersList = await headers();
+  const ip = headersList.get("x-forwarded-for");
+
 
   await resend.emails.send({
     from: 'Contact Form <SUBMISSIONS@jesusvelarde.com>',
@@ -30,6 +38,7 @@ export async function POST(req: Request) {
       <p><strong>Date of Birth (YYYY-MM-DD):</strong> ${submission.dob}</p>
       <p><strong>Zip:</strong> ${submission.zip}</p>
       <p><strong>Opt In (SMS): </strong> ${submission.optedIn}</p>
+      <p><strong>IP: </strong> ${ip}</p>
       <p><strong>Year:</strong> ${submission.year}</p>
       <p><strong>Make:</strong> ${submission.make}</p>
       <p><strong>Model:</strong> ${submission.model}</p>

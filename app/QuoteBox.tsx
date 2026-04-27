@@ -13,7 +13,7 @@ const options: Option[] = [
   { id: "business", label: "Business Insurance" },
   { id: "home", label: "Home Owner's Insurance" },
   { id: "renters", label: "Renter's Insurance" },
-  { id: "dmv", label: "DMV Services" },
+  { id: "motorcycle", label: "Motorcycle Insurance" },
 ];
 
 export interface QuoteBoxProps {
@@ -25,22 +25,22 @@ export default function QuoteSelector({  }: QuoteBoxProps) {
   const router = useRouter();
 
   return (
-    <div className="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-md">
+    <div className="w-full md:max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-md">
       {/* Header */}
       <div className="text-center mb-10">
-        <h1 className="text-4xl font-bold text-slate-800">
+        <h1 className="text-3xl md:text-4xl font-bold text-slate-800">
           SAVE up to <span className="text-red-500">35%</span>
         </h1>
-        <p className="mt-3 text-lg text-slate-700">
+        <p className="mt-3 text-md md:text-lg text-slate-700">
           Get Your Quote Online
         </p>
-        <p className="text-sm text-slate-500 mt-1">
+        <p className="md:text-sm text-slate-500 mt-1">
           or by calling <a href="tel:+18665773339" className="font-semibold">866-577-3339</a>
         </p>
       </div>
 
       {/* Options */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+      <div className="text-md grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
         {options.map((option) => {
           const isActive = selected === option.id;
 
@@ -48,7 +48,7 @@ export default function QuoteSelector({  }: QuoteBoxProps) {
             <button
               key={option.id}
               onClick={() => setSelected(option.id)}
-              className={`relative flex items-center justify-center text-center p-6 rounded-xl border transition cursor-pointer
+              className={`relative flex items-center justify-center text-center p-4 md:p-6 rounded-xl border transition cursor-pointer
                 ${
                   isActive
                     ? "bg-slate-800 text-white border-slate-800"

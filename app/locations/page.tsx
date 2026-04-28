@@ -16,7 +16,7 @@ export const LocationComponent = ({
     name, addr1, addr2, tel, hoursWeekdays, hoursSat, maps_href, tel_href
 }: LocationComponentProps) => {
     return (
-        <div className="leading-6 items-center justify-items-center text-gray-600">
+        <div className="leading-6 text-center text-gray-600">
             <h2 className="text-xl font-semibold mb-2">{name}</h2>
             <a className="flex flex-col items-center justify-items-center" href={maps_href} target="_blank">
                 <p>{addr1}</p>

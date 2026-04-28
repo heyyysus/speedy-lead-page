@@ -90,7 +90,7 @@ export default function LocationsPage(){
                 <LocationComponent {...loc} />
 
                 {/* Right — Image placeholder */}
-                <div className="flex items-center justify-items-center place-content-center w-full h-48">
+                <div className="flex items-center justify-items-center place-content-center w-full h-48 order-first md:order-last">
                     { loc.img && <Image className="rounded-lg" src={loc.img} width={256} height={256} alt={loc.name} /> }
                     { !loc.img && <div className="w-max-128 w-128 h-48 bg-gray-200 rounded-lg" />}
                 </div>

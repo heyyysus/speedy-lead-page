@@ -49,7 +49,7 @@ export const Header = () => {
     return (
         <div className="flex flex-col relative">
             {/** Main Header */}
-            <div className="h-17 text-sm font-[550] bg-white w-full text-slate-700 flex flex-row items-center px-8 md:px-10 md:mb-5 relative">
+            <div className="h-17 text-sm font-[550] bg-white w-full text-slate-700 flex flex-row items-center px-4 md:px-10 md:mb-5 relative">
                 <div className="hidden md:block">
                     <a href="/"><Image  src="/speedy_logo.png" alt="Speedy Insurance Agency" width={150} height={75} /></a>
                 </div>

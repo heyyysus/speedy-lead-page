@@ -64,7 +64,7 @@ export const ReviewBox = ({ title, content, name, href }: ReviewBoxProps) => {
 export const ReviewsComponent = () => {
   return (
     <div className=" py-20 w-screen bg-white mt-10 flex flex-col items-center justify-items-center place-content-center">
-      <h1 className="text-nowrap mb-10 text-2xl md:text-3xl font-bold">What Our Clients Think About Us</h1>
+      <h1 className="text-nowrap mb-10 text-xl md:text-3xl font-bold">What Our Clients Think About Us</h1>
       <div className="flex flex-col md:flex-row items-center justify-center">
         {Reviews.reviews.map((r, i) => <ReviewBox key={i} title={r.title} content={r.content} name={r.name} href={r.href} />)}
       </div>

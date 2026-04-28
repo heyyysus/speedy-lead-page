@@ -51,7 +51,7 @@ export const Header = () => {
             {/** Main Header */}
             <div className="h-17 text-sm font-[550] bg-white w-full text-slate-700 flex flex-row items-center px-8 md:px-10 md:mb-5 relative">
                 <div className="hidden md:block">
-                    <a href="tel:+19516951500"><Image  src="/speedy_logo.png" alt="Google Review" width={150} height={75} /></a>
+                    <a href="/"><Image  src="/speedy_logo.png" alt="Speedy Insurance Agency" width={150} height={75} /></a>
                 </div>
                 <div className="block md:hidden">
                     <MenuButton onClick={() => setMobileDropdown(prev => !prev)} />
@@ -83,7 +83,7 @@ export const Header = () => {
                 
                 </div>
                 <div className="block md:hidden absolute left-1/2 -translate-x-1/2">
-                    <span><Image  src="/speedy_logo.png" alt="Google Review" width={125} height={75} /></span>
+                    <a href="/"><Image  src="/speedy_logo.png" alt="Speedy Insurance Agency" width={125} height={75} /></a>
                 </div>
                 <a href="/locations" className="flex flex-row text-white ml-auto py-3 pr-4 md:pr-6 pl-4 bg-slate-800 rounded-md">
                     <LocationMarker /><span className="hidden md:block">Locations</span>

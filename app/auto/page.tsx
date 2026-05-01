@@ -78,8 +78,7 @@ export default function AutoQuotePage(){
     }}/>, <FinalSlide />]
     return (
         <div className="flex flex-col justify-center">
-            <div className="min-h-screen w-screen py-5">{slides[step]}</div>
-            
+            <div className="w-screen">{slides[step]}</div>
         </div>
     );
 }

@@ -4,7 +4,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "./Header";
 import Reviews from "../data/reviews.json"
-import { FAQSection } from "./FAQ";
+import { InfoSection1, InfoSection2 } from "./InfoSections";
+import { CEOSection } from "./CEOSection";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +31,7 @@ export interface ReviewBoxProps {
 
 export const Star = () => {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+        <svg className="" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
         </svg>
     );
@@ -38,7 +39,7 @@ export const Star = () => {
 
 export const ReviewBox = ({ title, content, name, href }: ReviewBoxProps) => {
     return(
-        <div className="mx-10 my-5 min-w-[200px] md:min-w-[400px] rounded-md border-slate-5 border-solid border p-4 flex flex-col align-center">
+        <div className="mx-10 my-5 min-w-[200px] md:min-w-[400px] rounded-sm border-slate-400 border border-solid p-4 flex flex-col align-center">
             <a href={href} target="_blank">
             <div className="flex flex-row items-center justify-between">
                 <div className="flex flex-row text-yellow-500">
@@ -63,11 +64,24 @@ export const ReviewBox = ({ title, content, name, href }: ReviewBoxProps) => {
 
 export const ReviewsComponent = () => {
   return (
-    <div className=" py-20 w-screen bg-white mt-10 flex flex-col items-center justify-items-center place-content-center">
-      <h1 className="text-nowrap mb-10 text-2xl md:text-3xl font-bold">What Our Clients Think About Us</h1>
-      <div className="flex flex-col md:flex-row items-center justify-center">
+    <div className="py-20 w-screen bg-white mt-5 md:mt-10 flex flex-col items-center justify-items-center place-content-center">
+      <h1 className="text-nowrap mb-10 text-xl md:text-3xl font-bold">What Our Clients Think About Us</h1>
+      
+      <div className="w-full overflow-hidden hidden md:block">
+        <div className="flex flex-row animate-marquee">
+          {[...Reviews.reviews, ...Reviews.reviews].map((r, i) => (
+            <div key={i} className="mx-4 flex-shrink-0">
+              <ReviewBox title={r.title} content={r.content} name={r.name} href={r.href} />
+            </div>
+          ))}
+        </div>
+      </div>
+        
+
+      <div className="flex flex-col md:hidden items-center justify-center">
         {Reviews.reviews.map((r, i) => <ReviewBox key={i} title={r.title} content={r.content} name={r.name} href={r.href} />)}
       </div>
+      
     </div>
     
   );
@@ -90,9 +104,13 @@ export default function RootLayout({
 
         <ReviewsComponent />
 
-        <FAQSection />
+        <InfoSection1 />
 
-        <div className="w-full py-20 px-20 mt-20 text-white bg-slate-600">
+        <InfoSection2 />
+
+        <CEOSection />
+
+        <div className="w-full py-20 px-20 text-white bg-slate-600">
           <p>Speedy Insurance Agency</p>
           <p>2995 Van Buren Blvd.</p>
           <p>Riverside, CA 92503</p>

@@ -9,11 +9,11 @@ type Option = {
 
 const options: Option[] = [
   { id: "auto", label: "Car Insurance" },
-  { id: "towing", label: "Towing Company Insurance" },
-  { id: "business", label: "Business Insurance" },
-  { id: "home", label: "Home Owner's Insurance" },
-  { id: "renters", label: "Renter's Insurance" },
   { id: "motorcycle", label: "Motorcycle Insurance" },
+  { id: "business", label: "Business Insurance" },
+  { id: "home", label: "Homeowner's Insurance" },
+  { id: "renters", label: "Renter's Insurance" },
+  { id: "sr22", label: "SR-22 Filing" },
 ];
 
 export interface QuoteBoxProps {

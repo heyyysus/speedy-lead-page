@@ -7,7 +7,7 @@ export const InfoSection1 = () => {
             <h1 className="text-nowrap mb-10 text-xl md:text-3xl font-bold">Why Drivers Choose Speedy Insurance</h1>
             <div className="flex flex-col items-center justify-center max-w-96 md:max-w-128 text-center">
                     <h2 className="flex flex-row items-center text-lg">
-                        <span className="text-yellow-500 mr-2"><Star /></span> 5-Star Rated Local Agency
+                        <span className="mr-2"><Star /></span> 5-Star Rated Local Agency
                     </h2>
                     <p className="text-slate-700 mb-5">
                         Our reviews do not lie. Thousands of customers count on our agents to deliver 

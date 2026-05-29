@@ -1,10 +1,10 @@
 'use client'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AutoSlide1 from "./AutoSlide1";
 import AutoSlide2 from "./AutoSlide2";
 import Image from "next/image";
-
-
+import { Option, options } from "../../QuoteBox";
+import { useParams } from 'next/navigation'
 
 
 
@@ -39,7 +39,7 @@ export interface Submission {
     make?: string,
     model?: string,
     optedIn?: boolean,
-
+    lineDesc?: string
 };
 
 export const PostSubmission = async (submission: Submission) => {
@@ -61,29 +61,36 @@ export const PostSubmission = async (submission: Submission) => {
 };
 
 export default function AutoQuotePage(){
+
+    const params = useParams<{ line: string }>()
+
+    const line = params.line;
+    const lineDesc = options.find(v =>  v.id === line )?.label;
+    
+
     const [step, changeStep] = useState<number>(0);
     const [submission, setSubmission] = useState<Submission>({});
 
-    const slides = [<AutoSlide1 handleSubmit={(fname, lname, zip, dob, phone, optedIn) => {
+    const slides = [<AutoSlide1 lineDesc={lineDesc} handleSubmit={(fname, lname, zip, dob, phone, optedIn) => {
         setSubmission({
-            fname, lname, zip, dob, phone, optedIn
+            fname, lname, zip, dob, phone, optedIn, lineDesc
         });
-        PostSubmission({fname, lname, zip, dob, phone, optedIn});
+        PostSubmission({fname, lname, zip, dob, phone, optedIn, lineDesc});
         changeStep(2);
-    }}/>, <AutoSlide2 handleSubmit={(year: string, make: string, model: string) => {
+    }}/>, <AutoSlide2 lineDesc={lineDesc} handleSubmit={(year: string, make: string, model: string) => {
         setSubmission({...submission, year, make, model});
         // console.log(submission);
         PostSubmission({...submission, year, make, model});
         changeStep(2);
     }}/>, <FinalSlide />]
+
+    useEffect(() => { 
+        if (lineDesc) document.title = `Quote | ${lineDesc}`;
+     }, [lineDesc]);
+
     return (
         <div className="flex flex-col justify-center">
             <div className="w-screen">{slides[step]}</div>
         </div>
     );
 }
-
-
-<div className="h-screen w-screen bg-white">
-    <div></div>
-</div>

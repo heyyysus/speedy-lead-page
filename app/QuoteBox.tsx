@@ -2,12 +2,12 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-type Option = {
+export type Option = {
   id: string;
   label: string;
 };
 
-const options: Option[] = [
+export const options: Option[] = [
   { id: "auto", label: "Car Insurance" },
   { id: "motorcycle", label: "Motorcycle Insurance" },
   { id: "business", label: "Business Insurance" },
@@ -71,7 +71,7 @@ export default function QuoteSelector({  }: QuoteBoxProps) {
       <button
         className="w-full bg-red-600 hover:bg-red-700 text-white text-lg font-bold py-4 rounded-lg transition cursor-pointer"
         onClick={() => {
-            router.push(`/${selected}`);
+            router.push(`/quote/${selected}`);
         }}
       >
         Get A Quote Now!

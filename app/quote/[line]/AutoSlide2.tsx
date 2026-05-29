@@ -1,10 +1,11 @@
 'use client'
 import { useState } from "react";
-import CarModels from "../../data/car-models.json";
+import CarModels from "../../../data/car-models.json";
 
 
 export interface QuoteBoxProps {
     handleSubmit?: (year: string, make: string, model: string) => void;
+    lineDesc?: string;
 };
 
 
@@ -35,7 +36,7 @@ export const FormDropdownMenu = ({ label, values, onChange }: FormDropdownMenuPr
 
 
 
-export default function AutoSlide2({ handleSubmit }: QuoteBoxProps) {
+export default function AutoSlide2({ handleSubmit, lineDesc }: QuoteBoxProps) {
   const [ fname, setfname ] = useState<string>("");
   const [ lname, setlname ] = useState<string>("");
   const [ zip, setzip ] = useState<string>("");

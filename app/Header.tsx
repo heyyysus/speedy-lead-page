@@ -68,11 +68,11 @@ export const Header = () => {
                     {/* Dropdown */}
                     {dropdown && (
                         <div className="text-nowrap absolute top-full left-0 pt-1 bg-white border border-gray-200 rounded shadow-lg z-50">
-                        <a href="/auto" className="block px-4 py-2 hover:bg-gray-100">Auto Insurance</a>
-                        <a href="#" className="block px-4 py-2 hover:bg-gray-100">Motorcycle Insurance</a>
-                        <a href="#" className="block px-4 py-2 hover:bg-gray-100">Home Insurance</a>
-                        <a href="#" className="block px-4 py-2 hover:bg-gray-100">Renters Insurance</a>
-                        <a href="#" className="block px-4 py-2 hover:bg-gray-100">Commercial Insurance</a>
+                        <a href="/quote/auto" className="block px-4 py-2 hover:bg-gray-100">Auto Insurance</a>
+                        <a href="/quote/motorcycle" className="block px-4 py-2 hover:bg-gray-100">Motorcycle Insurance</a>
+                        <a href="/quote/home" className="block px-4 py-2 hover:bg-gray-100">Home Insurance</a>
+                        <a href="/quote/renters" className="block px-4 py-2 hover:bg-gray-100">Renters Insurance</a>
+                        <a href="/quote/business" className="block px-4 py-2 hover:bg-gray-100">Commercial Insurance</a>
                         </div>
                     )}
 

@@ -1,5 +1,5 @@
 import { Resend } from 'resend';
-import { Submission } from '@/app/auto/page';
+import { Submission } from '@/app/quote/[line]/page';
 import type { NextRequest } from 'next/server';
 import { headers } from 'next/headers';
 
@@ -32,6 +32,7 @@ export async function POST(req: NextRequest) {
     subject: 'New Form Submission',
     replyTo: "noreply@speedyins.com",
     html: `
+      <p><strong>Business Line:</strong> ${submission.lineDesc} </p>
       <p><strong>First Name:</strong> ${submission.fname}</p>
       <p><strong>Last Name:</strong> ${submission.lname}</p>
       <p><strong>Phone No:</strong> ${submission.phone}</p>

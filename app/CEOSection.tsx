@@ -4,6 +4,7 @@ import Image from "next/image";
 export const CEOSection = () => {
     return(
     <div className="flex flex-col w-full py-20 bg-white mt-10 items-center">
+        <div><h1 className="text-nowrap mb-10 text-xl md:text-3xl font-bold">Our Agents</h1></div>
         <div className="flex flex-row max-w-256 items-center">
             <Image className="rounded-md" src="/tony_portrait.png" width={128} height={192} alt="Tony Dabouqi CEO" />
             <div className="ml-5">

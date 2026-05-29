@@ -1,5 +1,5 @@
 import { Star } from "./layout";
-
+import { CarIcon, HomeIcon, ApartmentIcon, ShopIcon, InsuranceAgentIcon, TimerIcon, GroupIcon } from "./Icons";
 
 export const InfoSection1 = () => {
     return(
@@ -15,7 +15,7 @@ export const InfoSection1 = () => {
                     </p>
 
                     <h2 className="flex flex-row items-center text-lg">
-                        Specialists in Insuring High-Risk Drivers
+                        <InsuranceAgentIcon /><div className="ml-3">Specialists in Insuring High-Risk Drivers</div>
                     </h2>
                     <p className="text-slate-700 mb-5">
                         Do not let an accident or a speeding ticket prevent you from
@@ -24,14 +24,14 @@ export const InfoSection1 = () => {
                     </p>
 
                     <h2 className="flex flex-row items-center text-lg">
-                        Instant Insurance Options
+                        <TimerIcon /><div className="ml-3">Instant Insurance Options</div>
                     </h2>
                     <p className="text-slate-700 mb-5">
                         Say goodbye to waiting periods. All of our auto/renters/motorcycle policies have the option for same-day coverage.
                     </p>
 
                     <h2 className="flex flex-row items-center text-lg">
-                        10+ Years Serving Riverside County
+                        <GroupIcon /><div className="ml-3">10+ Years Serving Riverside County</div>
                     </h2>
                     <p className="text-slate-700 mb-5">
                         Speedy Insurance has been serving Riverside residents since 2016. We understand our clients and we continue to offer 
@@ -50,17 +50,17 @@ export const InfoSection2 = () => {
                 We don't just insure cars. We protect you in all areas of life and business
             </h2>
             <div className="flex flex-col items-center justify-center max-w-96 md:max-w-128 text-center">
-                    <h2 className="flex flex-row items-center text-lg mb-5">
-                        Auto Insurance
+                    <h2 className="flex flex-row items-center text-xl mb-5">
+                        <CarIcon /><div className="ml-3">Auto Insurance</div>
                     </h2>
-                    <h2 className="flex flex-row items-center text-lg mb-5">
-                        Homeowners Insurance
+                    <h2 className="flex flex-row items-center text-xl mb-5">
+                        <HomeIcon /><div className="ml-3">Homeowners Insurance</div>
                     </h2>
-                    <h2 className="flex flex-row items-center text-lg mb-5">
-                        Renters Insurance
+                    <h2 className="flex flex-row items-center text-xl mb-5">
+                        <ApartmentIcon /><div className="ml-3">Renters Insurance</div>
                     </h2>
-                    <h2 className="flex flex-row items-center text-lg">
-                        Business &amp; Commercial Insurance
+                    <h2 className="flex flex-row items-center text-xl">
+                        <ShopIcon /><div className="ml-3">Business &amp; Commercial Insurance</div>
                     </h2>
             </div>
         </div>

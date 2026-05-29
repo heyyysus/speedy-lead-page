@@ -80,6 +80,8 @@ export default function LocationsPage(){
         },
     ];
 
+
+
     return (
     <div className="flex flex-col items-center justify-items-center min-h-120 mx-auto py-8 px-12 w-full md:max-w-5/6 bg-white rounded-lg shadow-md">
         <h1 className="text-3xl text-slate-700 font-semibold mb-10">Locations</h1>

@@ -1,12 +1,13 @@
 'use client'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { isDate } from "util/types";
 
 
 
 export interface QuoteBoxProps {
     handleSubmit?: (fname: string, lname: string, zip: string, dob: string, phone: string, optedIn: boolean) => void;
-};
+    lineDesc?: string;
+  };
 
 
 export interface FormInputProps {
@@ -71,7 +72,7 @@ export const FormZipInput = ({ label, onChange, value, required }: FormInputProp
       
 }
 
-export default function AutoSlide1({ handleSubmit }: QuoteBoxProps) {
+export default function AutoSlide1({ handleSubmit, lineDesc}: QuoteBoxProps) {
   const [ fname, setfname ] = useState<string>("");
   const [ lname, setlname ] = useState<string>("");
   const [ zip, setzip ] = useState<string>("");
@@ -108,6 +109,8 @@ export default function AutoSlide1({ handleSubmit }: QuoteBoxProps) {
     }
   }
 
+
+
   return (
     <div className="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-md">
       {/* Header */}
@@ -132,6 +135,10 @@ export default function AutoSlide1({ handleSubmit }: QuoteBoxProps) {
         }}
       >
 
+      {/* <div className="flex w-full items-center text-black flex-col mb-[15px] text-lg p-[12px] text-black">
+        Quote Type: {lineDesc}
+      </div> */}
+      
       <FormInput label="First Name" value={fname} onChange={setfname} required />
       {/* <FormInput label="Last Name" value={lname} onChange={setlname} required /> */}
       {/* <FormZipInput label="Zip Code" value={zip} onChange={handleZipChange} required /> */}

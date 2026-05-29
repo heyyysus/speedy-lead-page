@@ -101,11 +101,11 @@ export const Header = () => {
                     {/* Menu — absolutely positioned so it floats over content */}
                     <div className="md:hidden rounded-b-md absolute top-full left-0 flex flex-col bg-white shadow-lg z-50 text-lg font-[550] text-slate-700 w-72">
                         <span className="px-4 pt-3 pb-1 text-sm text-slate-400 uppercase tracking-wide">Insurance</span>
-                        <a href="/auto" className="block px-4 py-2 hover:bg-gray-100">Auto Insurance</a>
-                        <a href="#" className="block px-4 py-2 hover:bg-gray-100">Motorcycle Insurance</a>
-                        <a href="#" className="block px-4 py-2 hover:bg-gray-100">Home Insurance</a>
-                        <a href="#" className="block px-4 py-2 hover:bg-gray-100">Renters Insurance</a>
-                        <a href="#" className="block px-4 py-2 hover:bg-gray-100">Commercial Insurance</a>
+                        <a href="/quote/auto" className="block px-4 py-2 hover:bg-gray-100">Auto Insurance</a>
+                        <a href="/quote/motorcycle" className="block px-4 py-2 hover:bg-gray-100">Motorcycle Insurance</a>
+                        <a href="/quote/home" className="block px-4 py-2 hover:bg-gray-100">Home Insurance</a>
+                        <a href="/quote/renters" className="block px-4 py-2 hover:bg-gray-100">Renters Insurance</a>
+                        <a href="/quote/business" className="block px-4 py-2 hover:bg-gray-100">Commercial Insurance</a>
                         <div className="border-t border-gray-100 my-1" />
                         <a href="#" className="block px-4 py-2 hover:bg-gray-100">DMV Services</a>
                         <div className="border-t border-gray-100 my-1" />

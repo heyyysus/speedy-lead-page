@@ -118,6 +118,8 @@ export default function RootLayout({
           <p>Email: info@speedyins.com</p>
           
           <Image src="/banner.png" alt="Google Review" width={449} height={153} className="mt-10" />
+          <br /><br />
+          <p>Web Development Services Provided by <a className="underline" href="https://www.jesusvelarde.com">Jesus Velarde</a></p>
         </div>
       </body>
     </html>
